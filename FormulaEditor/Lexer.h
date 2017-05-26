@@ -24,7 +24,7 @@
 
 #define INI 52
 
-#define SPA_TAB	99	//读到一个space或tab
+#define SPA_TAB_ENTER	99	//读到一个space或tab或enter
 #define CORRECT 100	//读入一个正确的记号
 #define ERROR1 101	//'\'后面的字符串不对
 #define ERROR2 102	//读到一个非法字符

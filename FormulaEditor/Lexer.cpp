@@ -146,6 +146,7 @@ void symbol::copyattributes(symbol sym) {
 int symbol::readin(ifstream &in_f) {	//´Óifstream¶ÔÏó´ò¿ªµÄÎÄ¼þ¶ÁÈë×Ö·ûÁ÷£¬·µ»ØÒ»¸ö¼ÇºÅ
 	char ch;
 	in_f.get(ch);
+	
 	if (ch > 47 && ch < 58) {
 		value[0] = ch;
 		readinnum(in_f, value + 1);
@@ -219,8 +220,8 @@ int symbol::readin(ifstream &in_f) {	//´Óifstream¶ÔÏó´ò¿ªµÄÎÄ¼þ¶ÁÈë×Ö·ûÁ÷£¬·µ»ØÒ
 		type = DOLLAR;
 		return CORRECT;
 	}
-	else if (ch == 32 || ch == 9)
-		return SPA_TAB;
+	else if (ch == 32 || ch == 9 || ch == '\n')
+		return SPA_TAB_ENTER;
 	else {	//¶Áµ½·Ç·¨ÊäÈë×Ö·û
 		in_f.seekg(-1, ios::cur);
 		return ERROR2;
@@ -365,7 +366,7 @@ int x7getsymbolstream(ifstream &in_f, symbol symstream[MAXSTREAMLEN])	//´ÓÎÄ¼þ¶Á
 	int i = 0;
 	do {
 		int result = symstream[i].readin(in_f);
-		if (result == SPA_TAB)
+		if (result == SPA_TAB_ENTER)
 			continue;
 		else if (result == ERROR1) {
 			cout << "´íÎó£º¶àÓàµÄ '\\' ¡£" << endl;
