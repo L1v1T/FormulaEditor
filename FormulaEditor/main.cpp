@@ -30,7 +30,7 @@ int main() {
 	produslink(produs, end - 1, mark);
 
 	/*自顶向下计算剩余属性值*/
-	for (int i = 0;i < 4;i++) { finalcompute(produs, end - 1); }
+	for (int i = 0;i < 2;i++) { finalcompute(produs, end - 1); }
 	cout << "符号属性计算完毕\n" << endl;
 
 	/*生成html*/

@@ -34,7 +34,7 @@ public:
 	symbol left;
 	symbol rights[MAXPROLEN];
 	int type;	//是第几个产生式
-	production() :type(-1) {} //{ for (int i = 0;i < MAXPROLEN;i++)rights[i] = NULL; }
+	production() :type(-1) {}
 	int rightlen();	//返回产生式右边的符号数量
 
 	/*计算产生式的属性*/

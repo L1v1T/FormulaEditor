@@ -37,7 +37,6 @@
 #define ENLAGER 2
 
 /*符号继承top属性时的选项*/
-//#define NORMAL 0
 #define UPER 1
 #define DOWNER 2
 

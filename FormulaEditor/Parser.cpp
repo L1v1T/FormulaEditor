@@ -184,10 +184,10 @@ void production::rule3() {
 	if (!rights[0].checktop()) { rights[0].computetop(left, NORMAL); }
 	if (!rights[0].checkleft()) { rights[0].computeleft(left); }
 	if (!rights[4].checksize()) { rights[4].computesize(left, SHRINK); }
-	if (!rights[4].checktop()) { rights[4].computetop(left, UPER); }
+	if (!rights[4].checktop()) { rights[4].computetop(left, DOWNER); }
 	if (!rights[4].checkleft()) { rights[4].computeleft(left, rights[0].seelen()); }
 	if (!rights[7].checksize()) { rights[7].computesize(left, SHRINK); }
-	if (!rights[7].checktop()) { rights[7].computetop(left, DOWNER); }
+	if (!rights[7].checktop()) { rights[7].computetop(left, UPER); }
 	if (!rights[7].checkleft()) { rights[7].computeleft(rights[4]); }
 	if (!left.checklen()) {
 		if (rights[4].seelen() < rights[7].seelen()) { left.computelen(rights[0], rights[7]); }

@@ -55,7 +55,6 @@ void produslink(vector<production>& produs, int pos, bool mark[]) {
 		produs[pos].rights[nextB].copyattributes(produs[unmark].left);
 		
 		/*计算产生式的属性*/
-//		produs[pos].computeattributes();
 		nextB = findnextB(produs[pos], nextB - 1);
 	}
 	mark[pos] = true;
